@@ -1,0 +1,8 @@
+.calc-width {
+  width: 30rem;
+  border-radius: 10px;
+}
+
+.calc-screen {
+  background-color: rgb(155, 155, 155);
+}
