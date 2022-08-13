@@ -51,9 +51,9 @@ function Calculator() {
     <React.Fragment>
       <motion.div
         className="container text-center p-5 calc-width shadow-lg my-5"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-        exit={{ opacity: 0, y: 0, x: 100 }}
+        initial={{ opacity: 0, y: 100, scale: 0.2 }}
+        animate={{ opacity: 1, y: 0, transition: { duration: 0.3 }, scale: 1 }}
+        exit={{ opacity: 0, y: 0, x: window.innerWidth, duration: 2 }}
       >
         <div className="row calc-border">
           <div className="col col-lg-12 py-1 text-end px-4 rounded border border-primary bg-light">
@@ -113,7 +113,7 @@ function Calculator() {
           </div>
         </div>
         <div className="row py-3">
-          <div className="col d-grid">
+          <motion.div className="col d-grid" whileHover={{ scale: 1.2 }}>
             <button
               className="button btn-lg btn-light text-dark btn-block"
               type="button"
@@ -121,8 +121,8 @@ function Calculator() {
             >
               1
             </button>
-          </div>
-          <div className="col d-grid">
+          </motion.div>
+          <motion.div className="col d-grid" whileHover={{ scale: 1.2 }}>
             <button
               className="button btn-lg btn-light text-dark btn-block"
               type="button"
@@ -130,7 +130,7 @@ function Calculator() {
             >
               2
             </button>
-          </div>
+          </motion.div>
           <div className="col d-grid">
             <button
               className="button btn-lg btn-light text-dark btn-block"

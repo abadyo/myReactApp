@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
+import { ThemeContext } from "../helper/todoCont";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 import Navbar from "./navbar";
 
-import "../css/footer.css";
+import "../css/stayComp.css";
+import "../css/theme.css";
 
 function StayComp() {
+  const { theme, setTheme, toggleTheme } = useContext(ThemeContext);
+
   return (
     <>
       <Navbar />
-      <div className="container min-vh-100">
+      <div className="min-vh-100">
         <Outlet />
       </div>
+      <button
+        id="button-perm"
+        className={
+          "btn rounded-circle " + (theme === "dark" ? "btn-light" : "btn-dark")
+        }
+        onClick={toggleTheme}
+      >
+        <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} />
+      </button>
       <div className="container">
         <footer className="py-3 my-4">
           <ul className="nav justify-content-center border-bottom pb-3 mb-3">

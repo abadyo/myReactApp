@@ -85,12 +85,13 @@ function TicTacToe() {
       colorSign = "bg-primary text-light";
     }
     return (
-      <div
+      <motion.div
         className={`col col-lg-3 col-md-3 col-sm-3 col-height d-flex align-items-center justify-content-center border border-3 rounded ${colorSign}`}
         onClick={() => Toc(num)}
+        whileHover={{ scale: 1.2 }}
       >
         {tracker[num]}
-      </div>
+      </motion.div>
     );
   };
 
@@ -103,9 +104,9 @@ function TicTacToe() {
     <React.Fragment>
       <motion.div
         className="container text-center my-5"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-        exit={{ opacity: 0, y: 0, x: 100 }}
+        initial={{ opacity: 0, y: 100, scale: 0.2 }}
+        animate={{ opacity: 1, y: 0, transition: { duration: 0.3 }, scale: 1 }}
+        exit={{ opacity: 0, y: 0, x: window.innerWidth, duration: 2 }}
       >
         <div className="display-4">Tic-Tac-Toe-Tim!</div>
         <div className="container my-5 text-center field-width">

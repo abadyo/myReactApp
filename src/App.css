@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+#light {
+  background-color: azure;
+  transition: all 0.5s;
+}
+
+#dark {
+  background-color: #282c34;
+  transition: all 0.5s;
+}
